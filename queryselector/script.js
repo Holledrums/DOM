@@ -3,7 +3,8 @@ const color = prompt("welcome farbe?");
 //get body element / Element im HTML finden
 const body = document.querySelector("body");
 
-// style ändern
-body.style.backgroundColor = color;
+// style ändernqueryselector
+// body.style.backgroundColor = color;
+const sections = document.querySelectorAll("section");
 
-console.log(body);
+sections.forEach((sec) => (sec.style.backgroundColor = color));
