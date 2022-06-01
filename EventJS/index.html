@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <body>
+    <!--Mit dem `onclick`-Event wird ein EventHändler verknüpft -->
+    <h1 onclick="alert(`onclick`)">Event</h1>
+
+    <h2>MousEvents</h2>
+    <button type="submit" onmouseover="alert(`mouseover`)">mouseover</button>
+    <button type="submit" onmouseout="alert(`mouseout`)">mouseout</button>
+
+    <h2>keyboard-events</h2>
+    <form action="">
+      <label for="keypressed"
+        >keypress<input
+          type="text"
+          id="keypressed"
+          onkeypress="alert('onkeypress')"
+      /></label>
+      <br />
+      <label for="keydown"
+        >keydown<input type="text" id="keydown" onkeypress="alert('keydown')"
+      /></label>
+      <br />
+      <label for="keyup"
+        >keyup<input type="text" id="keyup" onkeypress="alert('keyup')"
+      /></label>
+      <br />
+      <button type="reset">reset</button>
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
