@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>||Working with elements||</title>
+</head>
+<body>
+  <div id="div1">div-Element mit id "div1"</div>
+</body>
+
+<script>
+document.body.onload = addElement;
+
+function addElement () {
+    // create a new div element
+    const newDiv = document.createElement("div");
+    // and give it some content
+    const newContent = document.createTextNode("dem DOM nachträglich hinzugefügt.");
+
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+
+    // add the newly created element and its content into the DOM
+    //const div1 = document.getElementById("div1");
+    const div1 = document.querySelector('#div1');
+
+    //document.body.insertBefore(newDiv, div1);
+
+    div1.appendChild(newDiv);
+
+    const newDiv2 = document.createTextNode("newDiv2");
+    div1.appendChild(newDiv2);
+
+    const list = document.createElement('ul');
+    const li1 = document.createElement('li');
+    const li2 = document.createElement('li');
+    list.appendChild(li1);
+    list.appendChild(li2);
+    li1.textContent = "li1";
+    li2.textContent = "li2";
+
+    document.body.appendChild(list);
+}
+
+</script>
+
+</html>
