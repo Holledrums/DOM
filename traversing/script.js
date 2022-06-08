@@ -8,6 +8,9 @@ function selectConcert(event /*Event Object */) {
   const button = event.target;
   // parent, egal auf welcher Ebene
   const concert = button.closest("li");
+  const title = concert.querySelector(".title");
   console.log("click", concert);
   concert.style.backgroundColor = "red";
+  title.style.backgroundColor = "orange";
+  console.log("click", title);
 }
