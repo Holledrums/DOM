@@ -7,6 +7,7 @@ buttons.forEach((button) => {
 
 function selectConcert(event /* Event Object */) {
   // das ausgewählte Konzert hervorheben
+  // target ist das Element wo das Event ausgelöst wurde
   const button = event.target;
 
   // erster parent, egal auf welcher Ebene
