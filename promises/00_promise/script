@@ -1,0 +1,9 @@
+const delivery = new Promise(handleDelivery);
+
+function handleDelivery(success, failure) {
+  setTimeout(() => {
+    failure();
+  }, 5000);
+}
+
+console.log(delivery);
