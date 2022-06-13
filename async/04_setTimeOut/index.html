@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeOut</title>
+  </head>
+  <body>
+    <script>
+      let text = "";
+      function writeH() {
+        text += "H";
+        document.body.textContent = text;
+      }
+      function writeO() {
+        text += "o";
+        document.body.textContent = text;
+      }
+      function writeL() {
+        text += "l";
+        document.body.textContent = text;
+      }
+      function writeG() {
+        text += "g";
+        document.body.textContent = text;
+      }
+      function writeE() {
+        text += "e";
+        document.body.textContent = text;
+      }
+      function writeR() {
+        text += "r";
+        document.body.textContent = text;
+      }
+
+      setTimeout(writeH, 1000);
+      setTimeout(writeO, 1500);
+      setTimeout(writeL, 2000);
+      setTimeout(writeG, 2500);
+      setTimeout(writeE, 3000);
+      setTimeout(writeR, 3500);
+    </script>
+  </body>
+</html>
