@@ -8,16 +8,21 @@
   </head>
   <body>
     <script>
-      const questionPromise = new Promise(askQuestion);
+      function newQuestion(questionStr) {
+        const questionPromise = new Promise((resolve, reject) => {
+          const response = confirm(questionStr);
+          response ? resolve() : reject();
+        });
 
-      function askQuestion(resolve, reject) {
-        const response = confirm("Heute ist Heiligabens");
-
-        response ? resolve() : reject();
+        return questionPromise;
       }
 
-      questionPromise.then(() => alert("Richtig!"));
-      questionPromise.catch(() => alert("Falsch!"));
+      newQuestion("ist denn heut schon Weihnachten?")
+        .then(() => alert("richtig! es ist noch ein bische bis Weihnachten"))
+        .catch(() => alert("falsch! Frohe Weihnachten"))
+        .then(() => newQuestion("heute ist aber auch nicht Ostern"))
+        .then(() => alert("richtig! Ostern war bereits im April"))
+        .catch(() => alert("falsch! vielSpaß beim Eier suchen :D"));
     </script>
   </body>
 </html>
