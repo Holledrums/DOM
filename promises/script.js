@@ -4,14 +4,13 @@ fetch("https://raw.githubusercontent.com/fbw-d05/data/main/team")
 
   // 1. Promise: Download wird beginnen
   .then((response) => {
+    const datas = response.text();
     // Download hat begonnen
     // 2. Promise: Download wird abgeschlossen sein und
     // die Antwort wird als Text zurückgegeben werden
-    return response.text();
+    return datas;
   })
-  .then(renderTeam);
-
-loadingWillStart.then(response);
+  .then((data) => renderTeam(data));
 
 function renderTeam(team) {
   const teamMates = team.split(",");
