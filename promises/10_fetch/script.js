@@ -15,9 +15,9 @@ fetch("https://raw.githubusercontent.com/fbw-d05/data/main/team")
   .then((data) => renderTeam(data))
   .catch(loadingFailure);
 
-["home", "Products", "Team"].forEach((item) => {
-  // Navigation generieren
-});
+fetch("https://")
+  .then((response) => text())
+  .catch(loadingFailure);
 
 function renderTeam(team) {
   const teamMates = team.split(",");
