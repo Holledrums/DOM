@@ -5,7 +5,7 @@ let images;
 // async functionen geben immer eine Promise zurück
 const rickMortyCharacters = async () => {
   const response = await fetch(apiCharacterURL);
-  const data = await response.json();
+  const data = await response.json(); // json Methode von fetch response macht JSON.parse
 
   //gibt Array zurück
   renderCharacters(data);
