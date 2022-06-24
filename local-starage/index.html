@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStarage</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+
+    <h2 id="greeting"></h2>
+
+    <!-- Begrüßung aus local Starage -->
+    <!-- Benutzereingabe - Formular -->
+    <form action="#" method="get">
+      <label for="name">Name</label>
+      <input type="text" id="name" value="" required />
+      <!-- Mit onclick wird der Name in LocalStorage gespeichert -->
+      <button type="submit" onclick="saveName()">Grüße Gemüse</button>
+      <!-- Löscht den Nutzer und die Local Staorage -->
+      <button onclick="removeUser()">Tschau mit V</button>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
