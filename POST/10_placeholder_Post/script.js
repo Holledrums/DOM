@@ -1,6 +1,7 @@
 const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const bodyInput = document.querySelector("#body");
+const postContainer = document.querySelector("#postContainer");
 
 async function getPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -9,18 +10,25 @@ async function getPosts() {
   console.log(posts);
 
   posts.forEach((element) => {
-    const post = document.createElement("div");
-    const title = document.createElement("h2");
-    const content = document.createElement("p");
+    const post = renderPost(element.title, element.body, element.id);
 
-    title.textContent = element.title;
-    content.textContent = element.body;
-
-    post.appendChild(title);
-    post.appendChild(content);
-
-    document.body.appendChild(post);
+    postContainer.appendChild(post);
   });
+}
+
+function renderPost(title, content, id) {
+  const post = document.createElement("div");
+  const titleElement = document.createElement("h2");
+  const contentElement = document.createElement("p");
+
+  titleElement.textContent = title;
+  contentElement.textContent = content;
+
+  post.id = "post" + id;
+
+  post.appendChild(titleElement);
+  post.appendChild(contentElement);
+  return post;
 }
 
 getPosts();
@@ -35,7 +43,23 @@ async function createPost(event) {
 
   console.log(title, postContent);
 
+  const payload = {
+    body: postContent,
+    title: title,
+    userId: 1,
+  };
+
   // Daten an server schicken
 
-  await fetch("https://jsonplaceholder.typicode.com/posts");
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  const data = await response.json();
+  const post = renderPost(data.title, data.body, data.id);
+
+  postContainer.prepend(post);
 }
