@@ -6,5 +6,9 @@ const withdraw = (balance, amount) => {
     console.log("bist arm digga");
   }
 };
+const deposit = (balance, amount) => {
+  balance += amount;
+  return balance;
+};
 
-export { withdraw };
+export { withdraw, deposit };
